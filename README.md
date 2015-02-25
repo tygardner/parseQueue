@@ -1,4 +1,4 @@
-#Introduction
+#parseQueue
 
 You will build a queue app similar to the one we use during class. We'll use a Parse backend.
 
@@ -26,48 +26,38 @@ app.factory('httpRequestInterceptor', function () {
 
 Parse is a great RESTful API. We'll use it to make 4 HTTP requests with AgularJS:
 
-<ul>
-	<li>GET - retrieve data</li>
-	<li>POST - create data</li>
-	<li>PUT - edit data</li>
-	<li>DELETE - delete data</li>
-</ul>
+* GET - retrieve data
+* POST - create data
+* PUT - edit data
+* DELETE - delete data
 
-#Step 1 - Set Up Application
+## Step 1 - Set Up Application
 
 The first thing we need to do is create and link all of our files. The AngularJS CDN is already loaded into the app, no need to look for outside code.
 
-<ul>
-	<li>Create MainController.js in the controllers folder and link it in the index</li>
-	<li>Create parseService.js in the *services* folder and link it in the index</li>
-	<li>Link the main.css file in the index</li>
-	<li>Link the app.js file in the index</li>
-</ul>
+* Create MainController.js in the controllers folder and link it in the index
+* Create parseService.js in the *services* folder and link it in the index
+* Link the main.css file in the index
+* Link the app.js file in the index
 
 We next want to ensure angular is working correctly, first connect your view and controller: 
 
-<ul>
-	<li>Create your angular module and palce it in all of your JavaScript files. remember: var app = angular.module('parseQ', [])</li>
-	<li>Place the ng-app into your index</li>
-	<li>Create your MainController and place it in your index using ng-controller</li>
-</ul>
+* Create your angular module and palce it in all of your JavaScript files. remember: var app = angular.module('parseQ', [])
+* Place the ng-app into your index
+* Create your MainController and place it in your index using ng-controller
 
 Then, create a test:
 
-<ul>
-	<li>In your MainController create a $scope.test object and give it a value</li>
-	<li>Call the $scope.test object in view to ensure it's pulling the value from the controller.</li>
-</ul>
+* In your MainController create a $scope.test object and give it a value.
+* Call the $scope.test object in view to ensure it's pulling the value from the controller.
 
-#Step 2 - Creating Questions
+## Step 2 - Creating Questions
 
 We will begin by making it possible to create questions, primarily because this is the most important feature of our queue. 
 
 Let's start with our service as it will be where our data begins and ends. 
 
-<ul>
-	<li>Go to your parse service and create a POST method, that takes in a question as a parameter. *Don't hesitate to refer to past apps you've built as a reference.*</li>
-</ul>
+* Go to your parse service and create a POST method, that takes in a question as a parameter. *Don't hesitate to refer to past apps you've built as a reference.*
 
 ##SIDENOTE
 
@@ -145,7 +135,7 @@ In the index file we need:
 
 Once everything is in place, we should be able to ask a question from our browser and then see that question in our Parse dashboard. 
 
-#Step 3 - Retrieving Questions
+## Step 3 - Retrieving Questions
 
 Once we are able to save our questions to our Parse database we will want to retrieve those questions so that we can see them in our view! 
 
@@ -173,7 +163,7 @@ Now you can show your in your view:
 
 If everything is working it's time to move into editing our questions!
 
-#Step 4 - Editing Questions
+## Step 4 - Editing Questions
 
 Once we have a list of students asking questions in the queue, we need to be able to escalate those questions to show which ones are being handled. 
 
@@ -196,7 +186,7 @@ Now that each question will have a default status of 'red', we need to make a wa
 
 Now we should be able to create a new question, watch it show up in the new question list, then move it to the 'being helped' or yellow list.
 
-#Step 5 - Delete Questions
+## Step 5 - Delete Questions
 
 Once we have answered someones question, we want to remove it from the list. We could easily do this by changing the status from yellow to something other than red and yellow. Then it wouldn't show up on any of the ng-repeats, but instead we are actually going to delete our questions from Parse. 
 
@@ -209,18 +199,3 @@ Once we have answered someones question, we want to remove it from the list. We 
 Now we should be able to delete our questions once they have been answered! 
 
 Wowee!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
