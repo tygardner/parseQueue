@@ -59,54 +59,21 @@ Let's start with our service as it will be where our data begins and ends.
 
 * Go to your parse service and create a POST method, that takes in a question as a parameter. *Don't hesitate to refer to past apps you've built as a reference.*
 
-*Note: As a guide, here is the anatomy of a POST GET PUT and DELETE request in Parse:*
+Here are some guides with CRUD operations and Parse:
 
 #### POST: [https://parse.com/docs/rest#objects-creating](https://parse.com/docs/rest#objects-creating)
+#### GET: [https://parse.com/docs/rest#objects-retrieving](https://parse.com/docs/rest#objects-retrieving)
+#### PUT: [https://parse.com/docs/rest#objects-updating](https://parse.com/docs/rest#objects-updating)
+#### DELETE: [https://parse.com/docs/rest#objects-deleting](https://parse.com/docs/rest#objects-deleting)
 
-##### What you need in angular:
+*As a reminder, what you need in angular for any/each of these actions:*
 - A Deferred variable for your promises
 - An $http request:
     - The *method* of the request
-    - The data object you're passing in
-    - the URL of the reqest
-
-- An appended promise object
-- lastly return the promise object
-
-#### [](https://github.com/DevMountain/parseQueue#get-httpsparsecomdocsrestobjects-retrieving)GET: [https://parse.com/docs/rest#objects-retrieving](https://parse.com/docs/rest#objects-retrieving)
-
-##### What you need in angular:
-- A Deferred variable for your promises
-- An $http request:
-    - The *method* of the request
-    - the URL of the reqest
-
-- An appended promise object
-- lastly return the promise object
-
-#### [](https://github.com/DevMountain/parseQueue#put-httpsparsecomdocsrestobjects-updating)PUT: [https://parse.com/docs/rest#objects-updating](https://parse.com/docs/rest#objects-updating)
-
-##### What you need in angular:
-- A Deferred variable for your promises
-- An $http request:
-    - The *method* of the request
-    - The data object you're editing
-    - the URL of the reqest
-
-- An appended promise object
-- lastly return the promise object
-
-#### [](https://github.com/DevMountain/parseQueue#delete-httpsparsecomdocsrestobjects-deleting)DELETE: [https://parse.com/docs/rest#objects-deleting](https://parse.com/docs/rest#objects-deleting)
-
-##### What you need in angular:
-- A Deferred variable for your promises
-- An $http request:
-    - The *method* of the request
-    - The data object you're deleting
-    - the URL of the reqest
-
-- An appended promise object
-- lastly return the promise object
+    - The data object you're passing in (if applicable)
+    - the URL of the request
+- Resolve/reject the promise based on the $http response
+- Return the promise object
 
 * * *
 
