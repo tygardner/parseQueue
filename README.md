@@ -2,6 +2,28 @@
 
 You will build a queue app similar to the one we use during class. We'll use a Parse backend.
 
+## Resources
+
+* [Parse API Documentation](https://www.parse.com/docs/rest)
+
+CRUD operations in Parse: 
+
+#### POST: [https://parse.com/docs/rest#objects-creating](https://parse.com/docs/rest#objects-creating)
+#### GET: [https://parse.com/docs/rest#objects-retrieving](https://parse.com/docs/rest#objects-retrieving)
+#### PUT: [https://parse.com/docs/rest#objects-updating](https://parse.com/docs/rest#objects-updating)
+#### DELETE: [https://parse.com/docs/rest#objects-deleting](https://parse.com/docs/rest#objects-deleting)
+
+*Review of angular promises used in services:*
+- A Deferred variable for your promises
+- An $http request:
+    - The *method* of the request
+    - The data object you're passing in (if applicable)
+    - the URL of the request
+- Resolve/reject the promise based on the $http response
+- Return the promise object
+
+## Prep
+
 Go ahead and sign up for an account at Parse: http://parse.com
 
 Then once logged into Parse, create a new app. After the app is created you will be shown your API keys. Don't leave that page until you have set up your keys. 
@@ -59,29 +81,11 @@ Let's start with our service as it will be where our data begins and ends.
 
 * Go to your parse service and create a POST method, that takes in a question as a parameter. *Don't hesitate to refer to past apps you've built as a reference.*
 
-Here are some guides with CRUD operations and Parse:
-
-#### POST: [https://parse.com/docs/rest#objects-creating](https://parse.com/docs/rest#objects-creating)
-#### GET: [https://parse.com/docs/rest#objects-retrieving](https://parse.com/docs/rest#objects-retrieving)
-#### PUT: [https://parse.com/docs/rest#objects-updating](https://parse.com/docs/rest#objects-updating)
-#### DELETE: [https://parse.com/docs/rest#objects-deleting](https://parse.com/docs/rest#objects-deleting)
-
-*As a reminder, what you need in angular for any/each of these actions:*
-- A Deferred variable for your promises
-- An $http request:
-    - The *method* of the request
-    - The data object you're passing in (if applicable)
-    - the URL of the request
-- Resolve/reject the promise based on the $http response
-- Return the promise object
-
-* * *
-
 After creating our POST request, we need to head over to the controller so that our users can create data on their own from the view.
 
-In the controller create a postData function. This function will take in our question from the view and pass it into the service. Refer to the chat app, it will have a very similar function.
+In the controller create a `postData` function. This function will take in our question from the view and pass it into the service.
 
-Now that our service is opening a connection from our app to Parse, and our controller is ready to take data in from the view and pass it to the service, we need to get our view set up!
+Now that our service is opening a connection from our app to Parse, and our controller is ready to take data in from the view and pass it to the service, we need to get our view set up.
 
 In the index file we need:
 
@@ -90,7 +94,7 @@ In the index file we need:
 
 Once everything is in place, we should be able to ask a question from our browser and then see that question in our Parse dashboard.
 
-## [](https://github.com/DevMountain/parseQueue#step-3---retrieving-questions)Step 3 - Retrieving Questions
+## Step 3 - Retrieving Questions
 
 Once we are able to save our questions to our Parse database we will want to retrieve those questions so that we can see them in our view!
 
@@ -114,7 +118,7 @@ Now you can show your in your view:
 
 If everything is working it's time to move into editing our questions!
 
-## [](https://github.com/DevMountain/parseQueue#step-4---editing-questions)Step 4 - Editing Questions
+## Step 4 - Editing Questions
 
 Once we have a list of students asking questions in the queue, we need to be able to escalate those questions to show which ones are being handled.
 
@@ -135,7 +139,7 @@ Now that each question will have a default status of 'red', we need to make a wa
 
 Now we should be able to create a new question, watch it show up in the new question list, then move it to the 'being helped' or yellow list.
 
-## [](https://github.com/DevMountain/parseQueue#step-5---delete-questions)Step 5 - Delete Questions
+## Step 5 - Delete Questions
 
 Once we have answered someones question, we want to remove it from the list. We could easily do this by changing the status from yellow to something other than red and yellow. Then it wouldn't show up on any of the ng-repeats, but instead we are actually going to delete our questions from Parse.
 
@@ -144,9 +148,5 @@ Once we have answered someones question, we want to remove it from the list. We 
 - Then in the ng-repeat that shows yellow questions create a button that calls the delete function from the controller.
 
 Now we should be able to delete our questions once they have been answered!
-
-Wowee!
-
-Now we should be able to delete our questions once they have been answered! 
 
 Wowee!
