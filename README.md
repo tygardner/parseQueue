@@ -83,7 +83,7 @@ Let's start with our service as it will be where our data begins and ends.
 
 After creating our POST request, we need to head over to the controller so that our users can create data on their own from the view.
 
-In the controller create a `postData` function. This function will take in our question from the view and pass it into the service.
+* In the controller create a `postData` function. This function will take in our question from the view and pass it into the service.
 
 Now that our service is opening a connection from our app to Parse, and our controller is ready to take data in from the view and pass it to the service, we need to get our view set up.
 
