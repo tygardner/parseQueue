@@ -12,7 +12,14 @@ app.service('parseService', function($http, $q, httpRequestInterceptor){
 			deferred.resolve(results)
 		})
 		return deferred.promise;
-	}
+	};
+
+	this.getData = function(){
+		return $http({
+			method: 'GET',
+			url: 'https://api.parse.com/1/classes/queue/'
+		})
+	};
 
 
 }); //end service
