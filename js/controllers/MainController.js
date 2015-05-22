@@ -4,14 +4,13 @@ app.controller('mainCtrl', function($scope, parseService){
 
 	$scope.postData = function(question){
 		parseService.postQuestion(question).then(function(results){
-			console.log(results);
+			$scope.getParseDate();
 		})		
 	};
 
 	$scope.getParseDate = function(){
 		parseService.getData().then(function(data){
-			$scope.questions = data.data.response;
-			console.log($scope.questions)
+			$scope.questions = data.data.results;
 		})
 	}
 
